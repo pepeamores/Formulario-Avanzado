@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/iniciar.css">
     <title>Formulario</title>
 
 </head>
@@ -27,5 +27,53 @@
 		</nav>
         <h2>Iniciar Sesión</h2>
 	</header>
+    <!--
+    <form action="index.html" id="formulario">
+        <table>
+            <tr>
+                <td><label for="fname">Nombre de Usuario:</label></td>
+                <td>
+                    <input type="text" id="nombre" name="nombre" class="field" placeholder="Escribe tu nombre completo">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="contraseña">Contraseña:</label>
+                </td>
+                <td>
+                    <input type="text" id="contraseña" name="contraseña" class="field" placeholder="Escribe tu contraseña" >
+                </td>
+            </tr>
+        </table>
+      </form> 
+      -->
+      <div id="contenedor">
+            
+        <div id="contenedorcentrado">
+            <div id="login">
+                <form id="loginform">
+                    <label for="usuario">Usuario</label>
+                    <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
+                    
+                    <label for="password">Contraseña</label>
+                    <input id="password" type="password" placeholder="Contraseña" name="password" required>
+                    
+                    <button type="submit" title="Ingresar" name="Ingresar">Login</button>
+                </form>
+                
+            </div>
+            <div id="derecho">
+                <div class="titulo">
+                    Bienvenido
+                </div>
+                <hr>
+                <div class="pie-form">
+                    <a href="registrarte.html">¿No tienes Cuenta? Registrate</a>
+                    <hr>
+                    <a href="index.html">« Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
