@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registrate.css">
     <title>Formulario</title>
 
 </head>
@@ -28,5 +28,59 @@
 		</nav>
         <h2>¡Registrarte!</h2>
 	</header>
+    <div id="container">
+        <h1>&bull;Registrate Aquí&bull;</h1>
+        <div class="underline">
+        </div>
+        
+        <form action="registrarte.html" method="post" id="contact_form">
+          <div class="name">
+            <label for="name"></label>
+            <input type="text" placeholder="Escribe tu nombre" name="name" id="name_input" >
+          </div>
+          <div class="apellido">
+            <label for="apellido"></label>
+            <input type="text" placeholder="Escribe tu apellido" name="apellido" id="apellido_input" >
+          </div>
+          <div class="email">
+            <label for="email"></label>
+            <input type="email" placeholder="Escribe tu email" name="email" id="email_input" >
+          </div>
+
+          <div class="telephone">
+            <label for="name"></label>
+            <input type="text" placeholder="Escribe tu telefono" name="telephone" id="telephone_input" >
+          </div>
+          <div class="dni">
+            <label for="dni"></label>
+            <input type="text" placeholder="Escribe tu DNI" name="dni" id="dni_input">
+          </div>
+          <div class="subject">
+            <label for="subject"></label>
+            <select placeholder="Subject line" name="subject" id="subject_input" >
+              <option disabled hidden selected>Indique el nivel de socio que quieres ser</option>
+              <option>Socio Normal</option>
+              <option>Socio Premiun</option>
+            </select>
+          </div>
+          <div class="usuario">
+            <label for="usuario"></label>
+            <input type="text" placeholder="Escribe tu usuario" name="usuario" id="usuario_input" >
+          </div>
+          <div class="contraseña">
+            <label for="contraseña"></label>
+            <input type="text" placeholder="Escribe tu contraseña" name="contraseña" id="contraseña_input" >
+          </div>
+          <br>
+          <br>
+          <br>
+          <div class="submit">
+            <input type="submit" value="Enviar Formulario" id="form_button" />
+          </div>
+          
+        </form><!-- // End form -->
+        <a target="_blank" class="fcc-btn" href="mostrardatos.html">Recuperar datos</a>  
+      </div><!-- // End #container --> 
+      <script src="js/registrarte.js"></script>
 </body>
 </html>

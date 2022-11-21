@@ -13,6 +13,23 @@ body {
     margin: 0;
 
 }
+.tarifa1{
+    float: left;
+    width: 460%;
+    height: 345%;
+}
+.tarifa2{
+    float: right;
+    width: 460%;
+    height: 345%;
+}
+.contenedor0{
+    border: solid 3px #474544;
+    background-color: #ccc;
+    max-width: 768px;
+    margin: 60px auto;
+    position: relative;
+}
 /*header{
     
     padding: 5px;
