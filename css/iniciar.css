@@ -1,3 +1,4 @@
+
 /* efectos por defecto */
 body {
     font-family: 'Overpass', sans-serif;
@@ -14,15 +15,11 @@ body {
 
 }
 .tarifa1{
-    float: left;
-    width: 460%;
-    height: 345%;
+    margin-left: 30%;
+    width: 60%;
+    height: 45%;
 }
-.tarifa2{
-    float: right;
-    width: 460%;
-    height: 345%;
-}
+
 .contenedor0{
     border: solid 3px #474544;
     background-color: #ccc;

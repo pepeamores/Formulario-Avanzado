@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/registrate.css">
-    <title>Formulario</title>
+    <title>Registrate</title>
 
 </head>
 <body>
@@ -33,10 +33,10 @@
         <div class="underline">
         </div>
         
-        <form action="registrarte.html" method="post" id="contact_form">
+        <form  action="mostrardatos.html" id="signupForm">
           <div class="name">
-            <label for="name"></label>
-            <input type="text" placeholder="Escribe tu nombre" name="name" id="name_input" >
+            <label for="fullname"></label>
+            <input type="text" placeholder="Escribe tu nombre" name="fullname" id="fullname" >
           </div>
           <div class="apellido">
             <label for="apellido"></label>
@@ -49,38 +49,43 @@
 
           <div class="telephone">
             <label for="name"></label>
-            <input type="text" placeholder="Escribe tu telefono" name="telephone" id="telephone_input" >
-          </div>
-          <div class="dni">
-            <label for="dni"></label>
-            <input type="text" placeholder="Escribe tu DNI" name="dni" id="dni_input">
+            <input type="text" placeholder="Escribe tu telefono" name="telephone" id="telephone" >
           </div>
           <div class="subject">
             <label for="subject"></label>
-            <select placeholder="Subject line" name="subject" id="subject_input" >
+            <select placeholder="Subject line"  id="luckynumber" >
               <option disabled hidden selected>Indique el nivel de socio que quieres ser</option>
-              <option>Socio Normal</option>
-              <option>Socio Premiun</option>
+              <option value="socio_normal">Socio Normal</option>
+              <option value="socio_premiun">Socio Premiun</option>
             </select>
           </div>
           <div class="usuario">
             <label for="usuario"></label>
-            <input type="text" placeholder="Escribe tu usuario" name="usuario" id="usuario_input" >
+            <input type="text" placeholder="Escribe tu usuario" name="usuario" id="usuario" >
           </div>
-          <div class="contraseña">
-            <label for="contraseña"></label>
-            <input type="text" placeholder="Escribe tu contraseña" name="contraseña" id="contraseña_input" >
+          <div class="password">
+            <label for="password"></label>
+            <input type="password" placeholder="Escribe tu contraseña" name="password" id="password" >
+          </div>
+          <div class="password">
+            <label for="password"></label>
+            <input type="password" placeholder="Confirma tu contraseña" name="confirm_password" id="confirm_password" >
           </div>
           <br>
           <br>
           <br>
           <div class="submit">
-            <input type="submit" value="Enviar Formulario" id="form_button" />
+            <input type="submit" value="Enviar Formulario"  id="form_button" />
+          </div>
+          <div class="submit2">
+            <input type="button" value="Guardar Datos"  id="guardardatos" />
           </div>
           
-        </form><!-- // End form -->
-        <a target="_blank" class="fcc-btn" href="mostrardatos.html">Recuperar datos</a>  
-      </div><!-- // End #container --> 
+        </form>
+      </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
       <script src="js/registrarte.js"></script>
 </body>
 </html>

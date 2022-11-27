@@ -1,18 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Formulario</title>
-
+    <link rel="stylesheet" href="css/iniciar.css">
+    <title>Inicio Sesión</title>
 </head>
 <body>
-    <!--<header>
-        <h2>Club Nautico Sevilla</h2>   
-        <img src= "img/img1.png" aling="left" width= "100px" height= "80px"/>
-    </header> -->
     <header id="main-header">
 		
 		<a id="logo-header" href="#">
@@ -22,35 +17,32 @@
 		<nav>
 			<ul>
 				<li><a href="index.html">Inicio</a></li>
-
 				<li><a href="contacto.html">Contacto</a></li>
 			</ul>
 		</nav>
-        <h2>Club Nautico Sevilla</h2>
+        <h2>Inicia Sesión</h2>
 	</header>
-    <br>
-    
     <div id="contenedor">
             
         <div id="contenedorcentrado">
             <div id="login">
                 <form id="loginform">
 
-                    <input type="button" class="btn" width="80px" onclick="location.href='registrarte.html';" value="¿Aún no eres Socio? Hazte!" />  
+                    <input type="text" placeholder="Escribe tu usuario"  id="usuario"/>  
                     <br>
-                    <input type="button" class="btn" width="50px" onclick="location.href='inicio.html';" value="Inicia Sesión" />                        
+                    <input type="password" placeholder="Escribe tu contraseña" name="password" id="password" />  
+                    <br>
+                    <input type="button"  onclick="login()" value="Iniciar Sesion" />                      
                 </form>
                 
             </div>
             <div id="derecho">
                 <div class="titulo">
-                    Bienvenido
+                    Iniciar Sesión
                 </div>
             </div>
         </div>
     </div>
-    <footer>
-        <h3>Club Nautico Sevilla</h3>
-    </footer>
+    <script src="JS/inicio.js"></script>
 </body>
 </html>

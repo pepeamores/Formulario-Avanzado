@@ -1,77 +1,142 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("contact_form").addEventListener('submit', validarFormulario);
+
+$(document).ready(function(){
+    $('#signupForm').validate({
+       rules: {
+         fullname: {
+             required: true,
+             minlength: 2
+          },
+          apellido: {
+             required: true,
+             minlength: 2
+          },
+          email: {
+            required: true,
+            email: true
+         },
+         telefono: {
+            required: true,
+            minlength: 9,
+            maxlength: 9
+         },
+         usuario: {
+            required: true,
+            minlength: 5
+         },
+         contraseña: {
+             required: true,
+             minlength: 5
+          },
+          confirm_password: {
+             required: true,
+             minlength: 5,
+             equalTo: "#password"
+          },
+          luckynumber:{
+            required: true
+          }
+       },
+       messages: {           
+         fullname: {
+             required: "Por favor ingresa tu nombre completo",
+             minlength: "Tu nombre debe ser de mas de 2 caracteres"
+             
+          },
+          apellido: {
+            required: "Por favor ingresa tu apellido completo",
+             minlength: "Tu apellido debe ser de mas de 2 caracteres"
+          },
+          
+          telefono: {
+            required: "Por favor ingresa tu teléfono completo",
+            minlength: "Tu telefono debe ser de no menos de 9 caracteres",
+            maxlength: " Tu telefono no debe tener mas de 9 caracteres"
+          },
+          contraseña: {
+             required: "Por favor ingresa una contraseña",
+             minlength: "Tu contraseña debe ser de no menos de 5 caracteres de longitud"
+          },
+          confirm_password: {
+             required: "Ingresa de nuevo la contraseña",
+             minlength: "Tu contraseña debe ser de no menos de 5 caracteres de longitud",
+             equalTo: "Por favor ingresa la misma contraseña de arriba"
+          },
+          email: "Por favor ingresa un correo válido",
+          luckynumber: {
+             required: "Por favor Ingrese una opcion"
+          }
+       },
+       
+       errorElement: "em",
+       
+       errorPlacement: function (error, element) {
+          // Add the `help-block` class to the error element
+          error.addClass("help-block");
+ 
+          if (element.prop( "type" ) === "checkbox") {
+             error.insertAfter(element.parent("label") );
+          } else {
+             error.insertAfter(element);
+          }
+       },
+       highlight: function ( element, errorClass, validClass ) {
+          $( element ).parents( ".col-sm-10" ).addClass( "has-error" ).removeClass( "has-success" );
+       },
+       unhighlight: function (element, errorClass, validClass) {
+          $( element ).parents( ".col-sm-10" ).addClass( "has-success" ).removeClass( "has-error" );  
+       } 
+    });
+      
+
+ });
+ $(document).ready(function(){    
+   $('#form_button').click(function(){        
+     var nombre = document.getElementById("fullname").value;
+      var email = document.getElementById("email_input").value;
+      var apellido = document.getElementById("apellido_input").value;
+      var telefono = document.getElementById("telephone").value;
+      var usuario = document.getElementById("usuario").value;
+      var contraseña = document.getElementById("password").value;
+      var opcion = document.getElementById("luckynumber").value;
+
+       localStorage.setItem("Nombre", JSON.stringify(nombre));
+       localStorage.setItem("email", JSON.stringify(email));
+       localStorage.setItem("apellido", JSON.stringify(apellido));
+       localStorage.setItem("telefono", JSON.stringify(telefono));
+       localStorage.setItem("usuario", JSON.stringify(usuario));
+       localStorage.setItem("contraseña", JSON.stringify(contraseña));
+      localStorage.setItem("Opcion", JSON.stringify(opcion));
+       /*
+       document.getElementById("fullname").value = "";
+       document.getElementById("email_input").value = "";
+       document.getElementById("apellido_input").value = "";
+       document.getElementById("telephone").value = "";
+       document.getElementById("usuario").value = "";
+       document.getElementById("password").value = "";
+   */   
+   }); 
+
 });
-function validarFormulario(evento) {
-    evento.preventDefault();
-    var nombre = document.getElementById('name_input').value;
-    if (nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)) {
-        alert('Introduce tu nombre');
-        return;
-    }
+/*
+function guardardatos(){
+   var nombre = document.getElementById("fullname").value;
+      var email = document.getElementById("email_input").value;
+      var apellido = document.getElementById("apellido_input").value;
+      var telefono = document.getElementById("telephone").value;
+      var usuario = document.getElementById("usuario").value;
+      var contraseña = document.getElementById("password").value;
 
-
-    var apellido = document.getElementById('apellido_input').value;
-    if (apellido == null || apellido.length == 0 || /^\s+$/.test(apellido)) {
-        alert('Introduce tu apellido');
-        return;
-    }
-
-    var email = document.getElementById('email_input').value;
-    re = /^([\da-z_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
-    if (!re.exec(email)) {
-        alert('Introduce el correo o asegurate que esta correcto');
-        return;
-    }
-    var telefono = document.getElementById('telephone_input').value;
-    if ((/^\d{10}$/.test(telefono)) || telefono == null || telefono.length == 0) {
-        alert("Introduce bien el telefono");
-        return;
-    }
-    var numero, let, letra;
-    var expresion_regular_dni = /^[XYZ]?\d{5,8}[A-Z]$/;
-    var dni = document.getElementById('dni_input').value;
-    dni = dni.toUpperCase();
-
-    if (expresion_regular_dni.test(dni) === true) {
-        numero = dni.substr(0, dni.length - 1);
-        numero = numero.replace('X', 0);
-        numero = numero.replace('Y', 1);
-        numero = numero.replace('Z', 2);
-        let = dni.substr(dni.length - 1, 1);
-        numero = numero % 23;
-        letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
-        letra = letra.substring(numero, numero + 1);
-        if (letra != let) {
-            alert('Dni erroneo, la letra del NIF no se corresponde');
-            return;
-        }
-    } else {
-        alert('Dni erroneo, formato no válido');
-        return;
-    }
-
-    var usuario = document.getElementById('usuario_input').value;
-    if (usuario == null || usuario.length == 0 || /^\s+$/.test(usuario)) {
-        alert('Introduce tu nombre de usuario');
-        return;
-    }
-    var contraseña = document.getElementById('contraseña_input').value;
-    if(contraseña == null || contraseña.length == 0){
-        alert('Introduce tu contraseña');
-        return;
-    }
-    this.submit();
-    
-    localStorage.setItem("nombre",JSON.stringify(nombre));
-    localStorage.setItem("apellido",JSON.stringify(apellido));
-    localStorage.setItem("telefono",JSON.stringify(telefono));
-    localStorage.setItem("email",JSON.stringify(email));
-    localStorage.setItem("dni",JSON.stringify(dni));
-    localStorage.setItem("usuario",JSON.stringify(usuario));
-    localStorage.setItem("contraseña",JSON.stringify(contraseña));
-   
-    añadirRegistro();
-    alert("Muchas gracias por enviar el formulario");
-    document.fvalida.submit();
-    getRegistroList();
-}
+       localStorage.setItem("Nombre", JSON.stringify(nombre));
+       localStorage.setItem("email", JSON.stringify(email));
+       localStorage.setItem("apellido", JSON.stringify(apellido));
+       localStorage.setItem("telefono", JSON.stringify(telefono));
+       localStorage.setItem("usuario", JSON.stringify(usuario));
+       localStorage.setItem("contraseña", JSON.stringify(contraseña));
+       document.getElementById("fullname").value = "";
+       document.getElementById("email_input").value = "";
+       document.getElementById("apellido_input").value = "";
+       document.getElementById("telephone").value = "";
+       document.getElementById("usuario").value = "";
+       document.getElementById("password").value = "";
+ }
+*/

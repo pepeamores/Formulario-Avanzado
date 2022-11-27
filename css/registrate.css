@@ -213,8 +213,8 @@ h1 {
     float: left;
 	width: 45%;
 }
-.contraseña{
-    float: right;
+.password{
+  float: right;
 	width: 45%;
 }
 .dni{
